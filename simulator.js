@@ -1,5 +1,5 @@
 
-class Sim {
+/*class Sim {
 
 	
 
@@ -11,8 +11,18 @@ class Sim {
 	}
 
 	getSpeed(){
-		return speed;
+		return 1;
 	}
 }
 
-module.exports = Sim;
+module.exports = Sim;*/
+
+var simulator = function() {};
+
+simulator.info = function(logText) {
+    console.log(new Date()+'info:::::'+logText);
+};
+
+
+
+module.exports = new simulator();

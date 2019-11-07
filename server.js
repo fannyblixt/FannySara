@@ -2,6 +2,7 @@
 
 var express = require('express');
 var http = require('http');
+var Sim = require('./simulator.js');
 var app = express();
 var PORT = 3000;
 var server = http.createServer(function(req, res) {
@@ -17,10 +18,12 @@ app.get('/', function(req, res) {
     res.status(200).send('Hello world');
 });*/
 
-const Sim = require('./simulator.js');
 
-const sim = new Sim(10);
 
-app.use('/',function(req,res){
-      //sql.users.controlID();
+//const sim = new Sim(10);
+
+app.get('/',function(req,res){
+      //new Sim(10);
+      //Sim.getSpeed();
+      Sim.info("users route");
   });
