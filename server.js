@@ -15,12 +15,15 @@ app.listen(PORT, function() {
 /*
 app.get('/', function(req, res) {
     res.status(200).send('Hello world');
-});*/
+});
+*/
 
 const Sim = require('./simulator.js');
 
-const sim = new Sim(10);
+const sim = new Sim(100);
 
-app.use('/',function(req,res){
-      //sql.users.controlID();
-  });
+app.get('/', function(req, res) {
+	var test = sim.getPrice();
+    res.status(200).send(""+test+"");
+});
+

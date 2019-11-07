@@ -2,7 +2,6 @@
 class Sim {
 
 	
-
 	constructor(consumption) {
 		//WindSpeed wind = new WindSpeed();
 		this.windspeed = 10;
@@ -10,8 +9,8 @@ class Sim {
 		this.price = this.consumption/this.windspeed;
 	}
 
-	getSpeed(){
-		return speed;
+	getPrice(){
+	return this.price;
 	}
 }
 
