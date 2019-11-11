@@ -1,8 +1,7 @@
 
-/*class Sim {
+class Sim {
 
 	
-
 	constructor(consumption) {
 		//WindSpeed wind = new WindSpeed();
 		this.windspeed = 10;
@@ -10,19 +9,11 @@
 		this.price = this.consumption/this.windspeed;
 	}
 
-	getSpeed(){
-		return 1;
+
+	getPrice(){
+	return this.price;
 	}
 }
 
-module.exports = Sim;*/
+module.exports = Sim;
 
-var simulator = function() {};
-
-simulator.info = function(logText) {
-    console.log(new Date()+'info:::::'+logText);
-};
-
-
-
-module.exports = new simulator();

@@ -16,14 +16,15 @@ app.listen(PORT, function() {
 /*
 app.get('/', function(req, res) {
     res.status(200).send('Hello world');
-});*/
+});
+*/
 
 
 
-//const sim = new Sim(10);
+const sim = new Sim(100);
 
-app.get('/',function(req,res){
-      //new Sim(10);
-      //Sim.getSpeed();
-      Sim.info("users route");
-  });
+app.get('/', function(req, res) {
+	var test = sim.getPrice();
+    res.status(200).send(""+test+"");
+});
+
