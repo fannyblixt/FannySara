@@ -20,10 +20,11 @@ app.get('/', function(req, res) {
 
 const Sim = require('./simulator.js');
 
-const sim = new Sim(100);
+//Send kw/day for X m^2
+const sim = new Sim(36,300);
 
 app.get('/', function(req, res) {
-	var test = sim.getPrice();
+	var test = sim.getTotalPrice();
     res.status(200).send(""+test+"");
 });
 
