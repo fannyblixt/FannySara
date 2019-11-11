@@ -17,4 +17,3 @@ class Wind {
 
 module.exports = Wind;
 
-//HEJ
