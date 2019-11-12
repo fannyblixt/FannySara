@@ -18,13 +18,33 @@ app.get('/', function(req, res) {
 });
 */
 
+
+
 const Sim = require('./simulator.js');
+
+const Db_user = require('./db/db_users.js');
+
+const db_user = new Db_user();
 
 //Send kw/day for X m^2
 const sim = new Sim(36,300);
 
 app.get('/', function(req, res) {
-	var test = sim.getTotalPrice();
-    res.status(200).send(""+test+"");
+	db_user.addUser(300,20);
+
+	var test = db_user.selectUser(16, (err, db_user) => {
+                    //send_(err, db_user, res)
+                    if(db_user.rowCount > 0){
+                    	var getArea = db_user.rows[0].area;
+                    	console.log(getArea);
+                    }else{
+                    	console.log("Dont exist");
+                    }
+                    
+                });
+
+	db_user.deleteUser(16);
+
+   res.status(200).send("KLAR");
 });
 
