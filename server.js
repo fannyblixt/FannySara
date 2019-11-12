@@ -37,7 +37,7 @@ app.get('/', function(req, res) {
 //Send kw/day for X m^2
 const sim = new Sim(36,300);
 
-/*app.get('/', function(req, res) {
+app.get('/', function(req, res) {
 	db_user.addUser(300,20);
 
 	var test = db_user.selectUser(16, (err, db_user) => {
@@ -54,7 +54,7 @@ const sim = new Sim(36,300);
 	db_user.deleteUser(16);
 
    res.status(200).send("KLAR");
-});*/
+});
 
 
 
