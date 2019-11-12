@@ -2,8 +2,18 @@
 
 var express = require('express');
 var http = require('http');
+var Sim = require('./simulator.js');
+var index = require('./index.html');
 var app = express();
 var PORT = 3000;
+
+app.use('/website',express.static('website'));
+app.route('/')
+    .get((req,res)=>{
+        res.redirect('website/index.html');
+        });
+
+
 var server = http.createServer(function(req, res) {
     res.writeHead(200, { "Content-type": "text/plain" });
     res.end("Hello world\n");
@@ -12,19 +22,17 @@ var server = http.createServer(function(req, res) {
 app.listen(PORT, function() {
     console.log('Server is running on PORT:',PORT);
 });
+
+
 /*
 app.get('/', function(req, res) {
     res.status(200).send('Hello world');
 });
 */
 
+//const Db_user = require('./db/db_users.js');
 
-
-const Sim = require('./simulator.js');
-
-const Db_user = require('./db/db_users.js');
-
-const db_user = new Db_user();
+//const db_user = new Db_user();
 
 //Send kw/day for X m^2
 const sim = new Sim(36,300);
@@ -47,4 +55,6 @@ app.get('/', function(req, res) {
 
    res.status(200).send("KLAR");
 });
+
+
 
