@@ -13,15 +13,6 @@ app.route('/')
         res.redirect('website/index.html');
         });
 
-//app.use('/',index);
-
-/*app.route('/')
-    .get((req,res)=>{
-        //res.redirect('/website/index.html');
-        //res.redirect('./index.html');
-        //res.redirect('index');
-        
-    });*/
 
 var server = http.createServer(function(req, res) {
     res.writeHead(200, { "Content-type": "text/plain" });
@@ -31,33 +22,6 @@ var server = http.createServer(function(req, res) {
 app.listen(PORT, function() {
     console.log('Server is running on PORT:',PORT);
 });
-
-
-
-
-
-
-/*var options = {
-  dotfiles: 'ignore',
-  etag: true,
-  extensions: ['htm', 'html'],
-  index: 'index.html',
-  lastModified: true,
-  maxAge: '1d',
-  setHeaders: function (res, path, stat) {
-    res.set('x-timestamp', Date.now());
-    res.header('Cache-Control', 'public, max-age=1d');
-  }
-};
-
-app.use('/',express.static('index.html',options));*/
-
-
-
-  /* app.get('/', function(req,res){
-        res.redirect('index.html');
-    })*/
-
 
 
 /*
