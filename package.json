@@ -14,11 +14,11 @@
     "node",
     "restful",
     "api"
-
   ],
   "author": "FannySara",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
   }
 }

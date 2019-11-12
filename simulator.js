@@ -1,17 +1,22 @@
 
+const Wind = require('./wind.js');
+
 class Sim {
 
-	
-	constructor(consumption) {
+	constructor(consumption, area) {
 		//WindSpeed wind = new WindSpeed();
-		this.windspeed = 10;
+		this.wind = new Wind();
+		this.area = area;
 		this.consumption = consumption;
-		this.price = this.consumption/this.windspeed;
+		this.consumption_per_area = this.consumption/this.area;
+		this.excessElProd = this.wind.getElProd() - this.consumption_per_area;
+		this.price = 1;
+		this.totalPrice = (this.price * this.consumption_per_area)/this.excessElProd;
 	}
 
-
-	getPrice(){
-	return this.price;
+	getTotalPrice(){
+		var pricePerDay = this.totalPrice*this.area;
+		return pricePerDay;
 	}
 }
 
